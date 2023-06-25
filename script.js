@@ -19,6 +19,12 @@ function addTask(){
     inputBox.value = '';
     saveData();
 }
+//add the task even on pressing the enter key
+inputBox.addEventListener('keypress',function(e){
+    if(e.keyCode === 13){
+        addTask();
+    }
+})
 
 listContainer.addEventListener('click',function(e){
     if(e.target.tagName === 'LI'){ //if clicked on list item
