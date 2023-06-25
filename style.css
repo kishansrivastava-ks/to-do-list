@@ -101,3 +101,15 @@ ul li span{
 ul li span:hover{
     background:#edeef0;
 }
+
+@media(min-width:200px) and (max-width: 250px){
+    .container{
+        width: 50%;
+    }
+    .todo-app{
+        max-width: 245px;
+    }
+    .row{
+        width: 230px;
+    }
+}
