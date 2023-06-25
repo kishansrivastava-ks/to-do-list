@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    /* 135deg gives a tilt to the gradient we apply */
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    /* 100px  top, auto from left and right, 20px bottom */
+    padding: 40px 30px 70px;
+    /* 40px  top, 30px from left and right, 70px bottom */
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px; /*so that there is space between icon and text*/
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*to make the add button go o the right end side*/
+    background: #edeef0;
+    border-radius: 30px;
+    /* padding-right: 20px; */
+    margin-bottom: 25px;
+}
+input{
+    flex: 1; /*to take the full width*/
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px; /*top-bottom and left-right*/
+    background: #dd5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none; /*no bullets*/
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none; /*the text will not be selectable*/
+    cursor: pointer;
+    position: relative; /*because we have added position absolute to the pseudo element*/
+}
+ul li::before{ /*pseudo element*/
+    content: '';
+    position: absolute; /*which means that the posiiton is relative to the task list*/
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover; /*single image to appear*/
+    background-position: center;
+    top: 12px;
+    left: 8px; /*appears 8px from the left side*/
+    /*the image unchecked is in the background of the task list*/
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background:#edeef0;
+}
